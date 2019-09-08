@@ -35,7 +35,7 @@ exports.createOrder = async (req, res, next) => {
       Item.findByIdAndUpdate(item._id, {
         stock: item.stock - req.body.quantity
       }, (err) => {
-        if{
+        if(err){
           console.log("Cannot update item", err);
         }
         
