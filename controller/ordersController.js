@@ -33,6 +33,12 @@ exports.createOrder = async (req, res, next) => {
 
       const doc = await Order.create(req.body);
 
+      Item.findByIdAndUpdate(item._id, {
+        stock: item.stock - req.body.quantity
+      }, (err) => {
+        console.log("Cannot update item", err);
+      });
+
       res.status(200).json({
         success: true,
         order: doc
