@@ -3,7 +3,6 @@ const Item = require("../models/itemModel");
 
 exports.getAllOrders = async (req, res, next) => {
   Order.find({}, (err, docs) => {
-    console.log("docs: ", docs);
     res.status(200).json({
       status: "success",
       results: docs.length,
