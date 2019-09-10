@@ -41,8 +41,8 @@ app.use(helmet());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 
-app.use('/api/v1', itemsRouter );
-app.use('/api/v1', ordersRouter);
+app.use('/', itemsRouter );
+app.use('/', ordersRouter);
 
 
 
