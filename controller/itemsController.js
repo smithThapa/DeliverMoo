@@ -5,10 +5,7 @@ exports.getAllItems = async (req, res, next) => {
     console.log("docs: ", docs);
     res.status(200).json({
       status: "success",
-      results: docs.length,
-      data: {
-        data: docs
-      }
+      items: docs
     });
   });
 };
@@ -28,6 +25,12 @@ exports.getAllItems = async (req, res, next) => {
 //     {
 //         "type": "cloth",
 //         "color": "blue",
+//         "size": "S",
+//         "stock": 15
+//     }, 
+//     {
+//         "type": "cloth",
+//         "color": "red",
 //         "size": "S",
 //         "stock": 15
 //     }
@@ -72,9 +75,7 @@ exports.getItemById = (req, res, next) => {
     }
     res.status(200).json({
       status: "success",
-      data: {
-        data: doc
-      }
+      item: doc
     });
   });
 };

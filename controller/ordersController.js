@@ -5,10 +5,7 @@ exports.getAllOrders = async (req, res, next) => {
   Order.find({}, (err, docs) => {
     res.status(200).json({
       status: "success",
-      results: docs.length,
-      data: {
-        data: docs
-      }
+      orders: docs
     });
   });
 };
@@ -64,9 +61,7 @@ exports.getOrderById = async (req, res, next) => {
     }
     res.status(200).json({
       status: "success",
-      data: {
-        data: doc
-      }
+      order: doc
     });
   });
 };
